@@ -9,6 +9,7 @@
 img {
     max-width: 100%;
 }
+/* Layout */
 body {
     height: 100vh;
     display: grid;
@@ -21,7 +22,6 @@ body {
 }
 body>header{
     grid-area: head;
-    background-color: aqua;
 }
 body>nav{
     grid-area: nav;
@@ -35,6 +35,63 @@ body>main{
     grid-area: main;
     background-color: burlywood;
 }
+/* Header */
+body>header{
+    display: flex;
+    justify-content: space-between;
+}
+body>header>section{
+    display: flex;
+    align-items: center;
+}
+.logo-section, .login-section {
+    gap: 1.5rem;
+    padding: 0 28px;
+}
+.head-button {
+    border: none;
+    background-color: transparent;
+    color: #0d2437;
+    padding: 0.85rem 1.3rem;
+    border-radius: 10rem;
+    max-height: 35px;
+    min-width: 64px;
+    display: inline-flex;
+    align-items: center;
+}
+#right-head-button {
+    border: 2px solid #74CC1D;
+}
+.searchbar-section>input {
+    height: 35px;
+    width: 40vw;
+    border-top-left-radius: .7rem;
+    border-bottom-left-radius:.7rem;
+    border: 1px solid lightgray;
+    border-right: none;
+    padding: 0.5rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.searchbar-section>button {
+    max-width: 50px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-left: none;
+    border-top-right-radius: .7rem;
+    border-bottom-right-radius:.7rem;
+    padding: 0.5rem 1rem;
+}
+.logo-section, .login-section>button:hover{
+    cursor: pointer;
+}
+.login-section>button:hover {
+    background-color: #f3f5f8;
+}
+.searchbar-section>button:hover {
+    cursor: pointer;
+}
 /* Media Queries */
 @media screen and (max-width:960px){
     body {
@@ -47,6 +104,19 @@ body>main{
     body>aside{
         display: none;
     }
+    .login-section {
+        gap: .5rem;
+    }
+    .head-button {
+        padding: 0.5rem 0.7rem;
+        width: 74px;
+    }
+    .searchbar-section>input {
+        width: 25vw;
+    }
+    .searchbar-section>button {
+        width: 50px;
+    }
 }
 @media screen and (max-width:640px){
     body {
@@ -58,5 +128,23 @@ body>main{
     }
     body>aside{
         display: none;
+    }
+    .head-button {
+        padding: 0.5rem 0.7rem;
+        width: 74px;
+        gap: .5rem;
+    }
+    .logo-section, .login-section {
+        gap: none;
+        padding: 0 10px;
+    }
+    .searchbar-section {
+        margin-left: auto;
+    }
+    .searchbar-section>input {
+        display: none;
+    }
+    .searchbar-section>button {
+        border: none;
     }
 }
